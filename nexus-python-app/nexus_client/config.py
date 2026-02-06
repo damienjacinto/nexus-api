@@ -25,6 +25,7 @@ class Config:
         self.nexus_password = os.getenv('NEXUS_PASSWORD')
         self.verify_ssl = os.getenv('NEXUS_VERIFY_SSL', 'true').lower() == 'true'
         self.timeout = int(os.getenv('NEXUS_TIMEOUT', '30'))
+        self.database_path = os.getenv('DATABASE_PATH', 'nexus_data.db')
 
     def get_client_kwargs(self) -> dict:
         """
